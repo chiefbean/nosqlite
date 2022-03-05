@@ -40,6 +40,16 @@ class NoSQLite:
                         self.writeOut()
                         return item
     
+    def deleteMany(self, data, table):
+        deleted = []
+        for item in self.jsonData[table]:
+                for sk, _ in data.items():
+                    if item[sk] == data[sk]:
+                        self.jsonData[table].remove(item)
+                        deleted.append(item)
+        self.writeOut()
+        return deleted
+
     def update(self, data, newData, table):
         for v, item in enumerate(self.jsonData[table]):
                 for sk, _ in data.items():
@@ -48,6 +58,16 @@ class NoSQLite:
                         self.writeOut()
                         return True
         return False
+
+    def updateMany(self, data, newData, table):
+        updated = []
+        for v, item in enumerate(self.jsonData[table]):
+                for sk, _ in data.items():
+                    if item[sk] == data[sk]:
+                        self.jsonData[table][v] = newData
+                        updated.append(item)
+        self.writeOut()
+        return updated
 
     def find(self, search, table):
         found = []
@@ -63,3 +83,17 @@ class NoSQLite:
             if mf:
                 found.append(item)
         return found
+    
+    def findOne(self, search, table):
+        for item in self.jsonData[table]:
+            mf = False
+            for sk, _ in search.items():
+                if sk in item:
+                    if item[sk] == search[sk]:
+                        mf = True
+                    elif item[sk] != search[sk] and mf:
+                        mf = False
+                        break
+            if mf:
+                return item
+        return None

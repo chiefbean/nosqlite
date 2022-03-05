@@ -50,15 +50,31 @@ class NoSQLite(filename)
   # data: json data to search table for
   # table: table to search and delete from
   delete(data, table)
+
+  # deletes data from table, deletes all found
+  # data: json data to search table for
+  # table: table to search and delete from
+  deleteMany(data, table)
   
   # updates data in table with newData, updates first found
   # data: json data to search table for
   # newData: new json data to change record to
   # table: table to search and update from
   update(data, newData, table)
+
+  # updates data in table with newData, updates all found
+  # data: json data to search table for
+  # newData: new json data to change record to
+  # table: table to search and update from
+  updateMany(data, newData, table)
   
   # find data in table, returns all matching records
   # data: json data to search table for
   # table: table to search
-  find(data, table
+  find(data, table)
+
+  # find data in table, returns first matching record
+  # data: json data to search table for
+  # table: table to search
+  findOne(data, table)
 ```
