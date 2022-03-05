@@ -67,7 +67,11 @@ class NoSQLite(filename)
   # newData: new json data to change record to
   # table: table to search and update from
   updateMany(data, newData, table)
-  
+
+  # find all data in table
+  # table: table to search
+  findAll(table)
+
   # find data in table, returns all matching records
   # data: json data to search table for
   # table: table to search

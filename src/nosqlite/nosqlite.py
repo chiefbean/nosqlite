@@ -69,6 +69,9 @@ class NoSQLite:
         self.writeOut()
         return updated
 
+    def findAll(self, table):
+        return self.jsonData[table]
+
     def find(self, search, table):
         found = []
         for item in self.jsonData[table]:
