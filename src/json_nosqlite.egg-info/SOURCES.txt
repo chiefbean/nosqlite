@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/json_nosqlite.egg-info/PKG-INFO
+src/json_nosqlite.egg-info/SOURCES.txt
+src/json_nosqlite.egg-info/dependency_links.txt
+src/json_nosqlite.egg-info/top_level.txt
+src/nosqlite/__init__.py
+src/nosqlite/nosqlite.py
