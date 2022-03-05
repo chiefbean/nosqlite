@@ -5,7 +5,7 @@ A JSON based flat file NoSQL database.
 ## Usage
 
 ```python
-from nosqlite import NoSQLite
+from nosqlite.nosqlite import NoSQLite
 
 ns = NoSQLite('file.json')
 
